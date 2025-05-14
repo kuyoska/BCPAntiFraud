@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.Data", "BCP.Data\BCP.Data.csproj", "{E819F29E-DABD-462C-963C-A0F2F4B1B3D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.Api.DbService", "BCP.Api.DbService\BCP.Api.DbService.csproj", "{8FCA4227-7853-46D6-9013-5951B528E93C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.Helpers", "BCP.Helpers\BCP.Helpers.csproj", "{2DE27C13-C05C-4602-9478-5E51257C9DA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.Api.TransactionService", "BCP.Api.TransactionService\BCP.Api.TransactionService.csproj", "{E4B2447E-19A3-4204-9B9D-E6500D30A128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.Services", "BCP.Services\BCP.Services.csproj", "{AEFD0413-1D3D-430E-81D8-8DA60B6AA8CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.Api.AntiFraud", "BCP.Api.AntiFraud\BCP.Api.AntiFraud.csproj", "{3F581682-F317-433E-88E9-F17B1970C70D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E819F29E-DABD-462C-963C-A0F2F4B1B3D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E819F29E-DABD-462C-963C-A0F2F4B1B3D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E819F29E-DABD-462C-963C-A0F2F4B1B3D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E819F29E-DABD-462C-963C-A0F2F4B1B3D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FCA4227-7853-46D6-9013-5951B528E93C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCA4227-7853-46D6-9013-5951B528E93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCA4227-7853-46D6-9013-5951B528E93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCA4227-7853-46D6-9013-5951B528E93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE27C13-C05C-4602-9478-5E51257C9DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE27C13-C05C-4602-9478-5E51257C9DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE27C13-C05C-4602-9478-5E51257C9DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE27C13-C05C-4602-9478-5E51257C9DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B2447E-19A3-4204-9B9D-E6500D30A128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B2447E-19A3-4204-9B9D-E6500D30A128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B2447E-19A3-4204-9B9D-E6500D30A128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B2447E-19A3-4204-9B9D-E6500D30A128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEFD0413-1D3D-430E-81D8-8DA60B6AA8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEFD0413-1D3D-430E-81D8-8DA60B6AA8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEFD0413-1D3D-430E-81D8-8DA60B6AA8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEFD0413-1D3D-430E-81D8-8DA60B6AA8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F581682-F317-433E-88E9-F17B1970C70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F581682-F317-433E-88E9-F17B1970C70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F581682-F317-433E-88E9-F17B1970C70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F581682-F317-433E-88E9-F17B1970C70D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE9D7F8B-82C9-4385-9C45-935151335225}
+	EndGlobalSection
+EndGlobal

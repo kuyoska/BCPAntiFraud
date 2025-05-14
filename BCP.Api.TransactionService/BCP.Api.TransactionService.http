@@ -1,0 +1,6 @@
+@BCP.Api.TransactionService_HostAddress = http://localhost:5056
+
+GET {{BCP.Api.TransactionService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

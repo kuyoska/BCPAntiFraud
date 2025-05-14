@@ -1,0 +1,6 @@
+@BCP.Api.AntiFraud_HostAddress = http://localhost:5021
+
+GET {{BCP.Api.AntiFraud_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
