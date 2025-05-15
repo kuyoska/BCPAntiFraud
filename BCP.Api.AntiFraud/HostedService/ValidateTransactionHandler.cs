@@ -43,13 +43,17 @@ namespace BCP.Api.AntiFraud.HostedService
 
                 try
                 {
-                    while (!stoppingToken.IsCancellationRequested)
+                    while (true)
                     {
                         var consumerResult = consumer.Consume();
+                        
                         var transaction = JsonSerializer.Deserialize<Transaction>(consumerResult.Message.Value);
+                        _logger.LogInformation($"message received {transaction.Id} status {transaction.Status}");
 
                         //TODO:validate transaction
                         var transactionUpdated = await _antiFraud.ValidateTransaction(transaction);
+
+                        _logger.LogInformation($"Validate transaction {transactionUpdated.Id} status {transactionUpdated.Status}");
 
                         var tranJson = JsonSerializer.Serialize(transactionUpdated);
                         await _kafkaProducer.ProduceMessage(_topicUpdateName, tranJson);

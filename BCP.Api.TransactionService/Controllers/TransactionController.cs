@@ -6,6 +6,8 @@ using System.Text.Json;
 
 namespace BCP.Api.TransactionService.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class TransactionController : Controller
     {
         private readonly ILogger<TransactionController> _logger;
@@ -24,7 +26,7 @@ namespace BCP.Api.TransactionService.Controllers
             _topicName = _configuration["KafkaTopicName"];
         }
 
-        [HttpPost]
+        [HttpPost(Name = "CreateTransaction")]
         public async Task<Transaction> Post([FromBody] Transaction transaction)
         {
             try
@@ -32,15 +34,21 @@ namespace BCP.Api.TransactionService.Controllers
                 var transactionCreated = await _dbService.CreateTransaction(transaction);
 
                 var tranJson = JsonSerializer.Serialize(transactionCreated);
-                //await _kafkaProducer.ProduceMessage(_topicName, tranJson);
+                await _kafkaProducer.ProduceMessage(_topicName, tranJson);
 
-                return transaction;
+                return transactionCreated;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error posting transaction error");
                 throw;
             }
+        }
+
+        [HttpGet(Name = "GetData")]
+        public IActionResult Get()
+        {
+            return Ok($"topicName {_configuration["KafkaTopicName"]} dbServer {_configuration["DbService_URL"]}");
         }
     }
 }

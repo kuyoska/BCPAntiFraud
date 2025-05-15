@@ -52,7 +52,7 @@ namespace BCP.Services
         {
             try
             {
-                var trans = await HTTPClientWrapper<IEnumerable<Transaction>>.Get(_serviceUrl);
+                var trans = await HTTPClientWrapper<IEnumerable<Transaction>>.Get(_serviceUrl+ $"?date={date.ToString("yyyy-MM-dd")}");
 
                 return trans;
             }

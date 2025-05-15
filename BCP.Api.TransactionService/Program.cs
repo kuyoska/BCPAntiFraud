@@ -1,3 +1,4 @@
+using BCP.Api.TransactionService.HostedService;
 using BCP.Api.TransactionService.Kafka;
 using BCP.Services;
 
@@ -9,8 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IDbService, IDbService>();
+builder.Services.AddScoped<IDbService, DbService>();
 builder.Services.AddScoped<IKafkaProducer, KafkaProducer>();
+builder.Services.AddSingleton<IHostedService, UpdateTransactionHandler>();
 
 var app = builder.Build();
 

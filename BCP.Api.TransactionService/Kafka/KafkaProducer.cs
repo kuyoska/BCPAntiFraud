@@ -12,7 +12,6 @@ namespace BCP.Api.TransactionService.Kafka
             {
                 BootstrapServers = "kafka:9092",
                 ClientId = "bcpDemo",
-
             };
         }
 

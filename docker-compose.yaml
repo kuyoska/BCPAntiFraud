@@ -1,31 +1,30 @@
 version: "3.7"
 services:
-  dbService:
+  dbservice:
     container_name: "db-service"
-    build:
-      context: .  
-      dockerfile: /BCP.Api.DbService/Dockerfile
+    build: 
+      dockerfile: BCP.Api.DbService/Dockerfile
     ports:
-      - "5185:80"
-  antiFraud:
+      - "5185:8080"
+  antifraud:
     container_name: "anti-fraud"
-    build:
-      context: .  
-      dockerfile: /BCP.Api.AntiFraud/Dockerfile
+    build: 
+      dockerfile: BCP.Api.AntiFraud/Dockerfile
     ports:
       - "5021:80"
-  transactionService:
+  transactionservice:
     container_name: "transaction-service"
     build:
-      context: .  
-      dockerfile: /BCP.Api.TransactionService/Dockerfile
+      dockerfile: BCP.Api.TransactionService/Dockerfile
     ports:
-      - "5056:80"
+      - "5056:8080"
   zookeeper:
+    container_name: "zookeeper"
     image: confluentinc/cp-zookeeper:5.5.3
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
   kafka:
+    container_name: "kafka"
     image: confluentinc/cp-enterprise-kafka:5.5.3
     depends_on: [zookeeper]
     environment:

@@ -43,6 +43,8 @@ namespace BCP.Api.TransactionService.HostedService
                         var consumerResult = consumer.Consume();
                         var transaction = JsonSerializer.Deserialize<Transaction>(consumerResult.Message.Value);
 
+                        _logger.LogInformation($"message received {transaction.Id} status {transaction.Status}");
+
                         //TODO:update transaction
                         await _dbService.UpdateStatus(transaction);
                     }
