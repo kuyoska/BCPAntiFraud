@@ -21,4 +21,4 @@ You will need a certain tools in order to locally install the app
 
 The Visual Studio solution for this demo contains 6 projects listed here:
 
- <img src="https://github.com/kuyoska/BCPAntiFraud/blob/master/Images/ProjectSolution.png" alt="Logo" width="80" height="80">
+ <img src="https://github.com/kuyoska/BCPAntiFraud/blob/master/Images/ProjectSolution.png" alt="solution" >
