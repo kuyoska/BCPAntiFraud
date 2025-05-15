@@ -9,20 +9,22 @@ namespace BCP.Services
     {
         private readonly ILogger<DbService> _logger;
         public readonly IConfiguration _configuration;
+        public readonly IHttpClientWrapper _httpClient;
         public readonly string _serviceUrl = string.Empty;
 
-        public DbService(ILogger<DbService> logger, IConfiguration configuration)
+        public DbService(ILogger<DbService> logger, IConfiguration configuration, IHttpClientWrapper httpClient)
         {
             _logger = logger;
             _configuration = configuration;
             _serviceUrl = _configuration["DbService_URL"];
+            _httpClient = httpClient;
         }
 
         public async Task<Transaction> CreateTransaction(Transaction transaction)
         {
             try
             {
-                var tran = await HTTPClientWrapper<Transaction>.PostRequest(_serviceUrl, transaction);
+                var tran = await _httpClient.PostRequest<Transaction>(_serviceUrl, transaction);
                 return tran;
             }
             catch (Exception ex)
@@ -37,7 +39,7 @@ namespace BCP.Services
         {
             try
             {
-                var trans = await HTTPClientWrapper<IEnumerable<Transaction>>.Get(_serviceUrl);
+                var trans = await _httpClient.Get<IEnumerable<Transaction>>(_serviceUrl);
 
                 return trans;
             }
@@ -52,7 +54,7 @@ namespace BCP.Services
         {
             try
             {
-                var trans = await HTTPClientWrapper<IEnumerable<Transaction>>.Get(_serviceUrl+ $"?date={date.ToString("yyyy-MM-dd")}");
+                var trans = await _httpClient.Get<IEnumerable<Transaction>>(_serviceUrl+ $"?date={date.ToString("yyyy-MM-dd")}");
 
                 return trans;
             }
@@ -67,7 +69,7 @@ namespace BCP.Services
         {
             try
             {
-                await HTTPClientWrapper<Transaction>.PutRequest(_serviceUrl, transaction);
+                await _httpClient.PutRequest<Transaction>(_serviceUrl, transaction);
             }
             catch (Exception ex)
             {

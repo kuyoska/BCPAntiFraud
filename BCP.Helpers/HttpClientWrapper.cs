@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
-using System.Net.Http.Formatting;
+﻿using System.Net.Http.Formatting;
+using Newtonsoft.Json;
 
 namespace BCP.Helpers
 {
-    public static class HTTPClientWrapper<T> where T : class
+    public class HttpClientWrapper : IHttpClientWrapper
     {
-        public static async Task<T> Get(string url)
+        public async Task<T> Get<T>(string url)
         {
-            T result = null;
+            T result = default;
             using (var httpClient = new HttpClient())
             {
                 var response = httpClient.GetAsync(new Uri(url)).Result;
@@ -25,9 +25,9 @@ namespace BCP.Helpers
             return result;
         }
 
-        public static async Task<T> PostRequest(string apiUrl, T postObject)
+        public async Task<T> PostRequest<T>(string apiUrl, T postObject)
         {
-            T result = null;
+            T result = default;
 
             using (var client = new HttpClient())
             {
@@ -48,7 +48,7 @@ namespace BCP.Helpers
             return result;
         }
 
-        public static async Task PutRequest(string apiUrl, T putObject)
+        public async Task PutRequest<T>(string apiUrl, T putObject)
         {
             using (var client = new HttpClient())
             {

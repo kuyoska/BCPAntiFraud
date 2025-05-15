@@ -31,7 +31,7 @@ namespace BCP.Api.AntiFraud
                 return transaction;
             }
             else
-                throw new Exception("Transaction is empty");
+                throw new ArgumentException("Transaction is empty");
         }
     }
 }

@@ -44,11 +44,5 @@ namespace BCP.Api.TransactionService.Controllers
                 throw;
             }
         }
-
-        [HttpGet(Name = "GetData")]
-        public IActionResult Get()
-        {
-            return Ok($"topicName {_configuration["KafkaTopicName"]} dbServer {_configuration["DbService_URL"]}");
-        }
     }
 }
