@@ -33,3 +33,7 @@ The Visual Studio solution for this demo contains 6 projects listed here:
 I am using a Producer-Consumer strategy with kafka, where the producer(BCP.Api.TransactionService) will create a message with the transaction and a consumer(BCP.Api.AntiFraud) will process the message and produce a new message with the transaction status result , so that another consumer(BCP.Api.TransactionService) reads that message and update the database with the new status.
 
 Comunication with the db is via HTTP using BCP.Services.DbService, so BCP.Api.AntiFraud and BCP.Api.TransactionService comunnicate witht he db using that service.
+
+Here a simple flow chart of the whole process when creating a new transaction:
+
+<img src="https://github.com/kuyoska/BCPAntiFraud/blob/master/Images/flow.png" alt="solution" >
