@@ -16,7 +16,7 @@ builder.Services.AddScoped<IAntiFraud, AntiFraud>();
 builder.Services.AddTransient<IHttpClientWrapper, HttpClientWrapper>();
 builder.Services.AddTransient<IDbService, DbService>();
 builder.Services.AddTransient<IKafkaProducer, KafkaProducer>();
-//builder.Services.AddSingleton<IHostedService, ValidateTransactionHandler>();
+builder.Services.AddSingleton<IHostedService, ValidateTransactionHandler>();
 
 var app = builder.Build();
 

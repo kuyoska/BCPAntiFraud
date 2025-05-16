@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IHttpClientWrapper, HttpClientWrapper>();
 builder.Services.AddTransient<IDbService, DbService>();
 builder.Services.AddTransient<IKafkaProducer, KafkaProducer>();
-//builder.Services.AddSingleton<IHostedService, UpdateTransactionHandler>();
+builder.Services.AddSingleton<IHostedService, UpdateTransactionHandler>();
 
 var app = builder.Build();
 
