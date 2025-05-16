@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{02EA68
 		..\..\..\Pictures\ProjectSolution.png = ..\..\..\Pictures\ProjectSolution.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCP.UnitTesting.Tests", "BCP.UnitTesting.AntifraudTests\BCP.UnitTesting.Tests.csproj", "{E5A75E09-8175-4D2E-A798-4BCE9E1FE97B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{3F581682-F317-433E-88E9-F17B1970C70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F581682-F317-433E-88E9-F17B1970C70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F581682-F317-433E-88E9-F17B1970C70D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A75E09-8175-4D2E-A798-4BCE9E1FE97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A75E09-8175-4D2E-A798-4BCE9E1FE97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A75E09-8175-4D2E-A798-4BCE9E1FE97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A75E09-8175-4D2E-A798-4BCE9E1FE97B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,9 +8,9 @@ namespace BCP.Services
     public class DbService : IDbService
     {
         private readonly ILogger<DbService> _logger;
-        public readonly IConfiguration _configuration;
-        public readonly IHttpClientWrapper _httpClient;
-        public readonly string _serviceUrl = string.Empty;
+        private readonly IConfiguration _configuration;
+        private readonly IHttpClientWrapper _httpClient;
+        private readonly string _serviceUrl = string.Empty;
 
         public DbService(ILogger<DbService> logger, IConfiguration configuration, IHttpClientWrapper httpClient)
         {
